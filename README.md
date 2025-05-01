@@ -31,12 +31,31 @@
 3. **Install the Dependencies**
    ```bash
    pip install -r requirements.txt
-
-4.**Set up your config.json Create a file named config.json in the root directory**
-   ```json
+   
+4. **Add Your API Key**
+   ```bash
    {
    "GROQ_API_KEY": "your_groq_api_key_here"
    }
+
+5. **Run the APP**
+   ```bash
+   streamlit run main.py
+
+---
+
+## 📦 Project Structure
+
+```
+alpaca-chatbot/
+├── app.py                 # Main Streamlit application
+├── config.json            # API key config file (not tracked)
+├── chat_history.json      # Chat logs saved locally
+├── requirements.txt       # Python dependencies
+└── screenshots/           # Place screenshots here (for README)
+```
+
+   
 
 
 
