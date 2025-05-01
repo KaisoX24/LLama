@@ -26,5 +26,18 @@
 2. **Create and activate a virtual environment**
    ```bash
    python -m venv venv
-   venv\Scripts\activate   #on Mac source venv/bin/activate 
+   venv\Scripts\activate   #on Mac source venv/bin/activate
+   
+3. **Install the Dependencies**
+   ```bash
+   pip install -r requirements.txt
+
+4.**Set up your config.json Create a file named config.json in the root directory**
+   ```bash
+   {"GROQ_API_KEY": "your_groq_api_key_here"}
+
+
+
+
+
 
