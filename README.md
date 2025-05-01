@@ -16,4 +16,15 @@
 
 ---
 
+## 📦 Setup Instructions
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/alpaca-chatbot.git
+   cd alpaca-chatbot
+
+2. **Create and activate a virtual environment**
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate   #on Mac source venv/bin/activate 
 
