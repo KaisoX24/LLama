@@ -52,13 +52,27 @@ alpaca-chatbot/
 ├── config.json            # API key config file (not tracked)
 ├── chat_history.json      # Chat logs saved locally
 ├── requirements.txt       # Python dependencies
-└── screenshots/           # Place screenshots here (for README)
 ```
+---
+## 🛠️ Tech Stack
 
-   
+| Technology | Purpose |
+|------------|---------|
+| **Python** | Core programming language |
+| **Streamlit** | Frontend Web App framework |
+| **Groq API** | For using the LLaMA 3.2 Vision preview model | 
+| **Lottie Animations** | Animated visuals |
+| **JSON** | For configuration and saving chat history |
+| **Logging (Python standard library)** | For error tracking and debug logging |
 
+---
 
+## 🧠 Credits
 
+Developed by Pramit Acharjya.
 
+---
 
+## 📃 License
 
+This project is licensed under the MIT License. Feel free to use, modify, and share!
