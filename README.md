@@ -60,7 +60,7 @@ alpaca-chatbot/
 |------------|---------|
 | **Python** | Core programming language |
 | **Streamlit** | Frontend Web App framework |
-| **Groq API** | For using the LLaMA 3.2 Vision preview model | 
+| **Groq API** | For using the llama-3.1-8b-instant model | 
 | **Lottie Animations** | Animated visuals |
 | **JSON** | For configuration and saving chat history |
 | **Logging (Python standard library)** | For error tracking and debug logging |
