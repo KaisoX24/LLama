@@ -33,7 +33,7 @@
    pip install -r requirements.txt
 
 4.**Set up your config.json Create a file named config.json in the root directory**
-   ```bash
+   ```json
    {
    "GROQ_API_KEY": "your_groq_api_key_here"
    }
