@@ -16,10 +16,4 @@
 
 ---
 
-## 📸 Screenshots
 
-Create a `screenshots` folder and add your screenshots there. Reference them like this in your README:
-
-```markdown
-![Home UI](screenshots/home.png)
-![Chat Example](screenshots/chat.png)
