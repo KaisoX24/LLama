@@ -40,7 +40,7 @@ def initialize_groq_client(api_key: str) -> Groq:
 def get_groq_response(client: Groq, messages: List[Dict]) -> str:
     try:
         response = client.chat.completions.create(
-            model='llama-3.2-11b-vision-preview',
+            model='llama-3.1-8b-instant',
             messages=messages
         )
         return response.choices[0].message.content
