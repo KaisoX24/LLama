@@ -7,6 +7,7 @@ from datetime import datetime
 from typing import List, Dict
 from groq import Groq
 
+client = Groq(api_key=os.getenv('GROQ_API_KEY'))
 
 st.set_page_config(
     page_title='ChatBOT',
@@ -16,7 +17,6 @@ st.set_page_config(
 )
 
 logging.basicConfig(level=logging.ERROR)
-
 
 def load_config(config_path: str) -> Dict:
     try:
@@ -31,16 +31,10 @@ def load_config(config_path: str) -> Dict:
         logging.error("Config file not found.")
         st.stop()
 
-
-def initialize_groq_client(api_key: str) -> Groq:
-    os.environ['GROQ_API_KEY'] = api_key
-    return Groq()
-
-
-def get_groq_response(client: Groq, messages: List[Dict]) -> str:
+def get_groq_response(messages: List[Dict]) -> str:
     try:
         response = client.chat.completions.create(
-            model='llama-3.1-8b-instant',
+            model='llama-3.3-70b-versatile',
             messages=messages
         )
         return response.choices[0].message.content
@@ -48,9 +42,6 @@ def get_groq_response(client: Groq, messages: List[Dict]) -> str:
         st.error(f"Error in Groq API call: {e}")
         logging.error(f"Groq API call error: {e}")
         st.stop()
-
-
-
 
 def save_chat_history(chat_history: List[Dict]) -> None:
     history_path = os.path.join(working_dir, 'chat_history.json')
@@ -90,20 +81,6 @@ project_name = "Alpaca"
 
 # Get the directory of the current file
 working_dir = os.path.dirname(os.path.abspath(__file__))
-
-# Load configuration
-config_path = os.path.join(working_dir, 'config.json')
-config_data = load_config(config_path)
-
-# Set environment variable for Groq API key
-GROQ_API_KEY = os.getenv('GROQ_API_KEY', config_data.get('GROQ_API_KEY'))
-if not GROQ_API_KEY:
-    st.error("GROQ_API_KEY not found in environment or config file!")
-    logging.error("GROQ_API_KEY not found.")
-    st.stop()
-
-# Initialize Groq client
-client = initialize_groq_client(GROQ_API_KEY)
 
 # Initialize chat history if not already in session state
 if 'chat_history' not in st.session_state:
@@ -151,7 +128,7 @@ if user_input:
 
     # Call the Groq API and get the response
     with st.spinner('Processing your request...'):
-        assistant_response = get_groq_response(client, messages)
+        assistant_response = get_groq_response(messages)
 
     # Append assistant response to chat history and display it
     st.session_state.chat_history.append({'role': 'assistant', 'content': assistant_response, 'timestamp': timestamp})
