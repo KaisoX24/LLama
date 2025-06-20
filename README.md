@@ -20,8 +20,8 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/alpaca-chatbot.git
-   cd alpaca-chatbot
+   git clone https://github.com/KaisoX24/LLama.git
+   cd LLama
 
 2. **Create and activate a virtual environment**
    ```bash
@@ -47,7 +47,7 @@
 ## 📦 Project Structure
 
 ```
-alpaca-chatbot/
+LLama/
 ├── app.py                 # Main Streamlit application
 ├── config.json            # API key config file (not tracked)
 ├── chat_history.json      # Chat logs saved locally
